@@ -1,5 +1,15 @@
 <template>
-  <div></div>
+  <div class="list">
+    <h1 class="list_title">
+      History
+    </h1>
+
+    <div class="list_wrapper">
+      <div class="list_item">
+        <p>asdf</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
