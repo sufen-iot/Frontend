@@ -6,7 +6,7 @@
 
     <div class="list_wrapper">
       <div class="list_item">
-        <p>asdf</p>
+        <p></p>
       </div>
     </div>
   </div>
