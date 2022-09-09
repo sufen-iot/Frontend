@@ -23,10 +23,10 @@ export async function getAccidentList (): Promise<Accident> {
 }
 
 export async function getAccidentListById (id: number): Promise<AccidentList> {
-  const accidentList = await getAPI.get(`/accident?id=${id}`)
+  const accidentList = await getAPI.get(`/accident/${id}`)
   return accidentList.data
 }
 
-export async function postAccidentList (data: returnAccident) {
-  await getAPI.post('/accident', data)
+export async function putAccidentList (data: returnAccident) {
+  await getAPI.put('/accident', data)
 }

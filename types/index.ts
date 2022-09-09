@@ -5,7 +5,8 @@ export interface AccidentList {
     time: Date;
     type: string;
     image: string;
-    position: string;
+    latitude: number;
+    longitude: number;
     status: boolean;
 }
 
