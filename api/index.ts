@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Accident, AccidentList, returnAccident } from '~/types'
 
 const getAPI = axios.create({
-  baseURL: process.env.VUE_API_URL,
+  baseURL: process.env.API_URL,
   withCredentials: true
 })
 // api 를 호출하는 axios 모듈을 생성합니다.
@@ -12,7 +12,7 @@ const getAPI = axios.create({
 
 export async function connectionTest (): Promise<object> {
   const test = await getAPI.get('/hello')
-  return test
+  return test.data
 }
 // api 테스트 함수 입니다.
 
@@ -22,7 +22,7 @@ export async function getAccidentList (): Promise<Accident> {
   return accidentList.data
 }
 
-export async function getAccidentListById (id: number): Promise<AccidentList> {
+export async function getAccidentListById (id: AccidentList['id']): Promise<AccidentList> {
   const accidentList = await getAPI.get(`/accident/${id}`)
   return accidentList.data
 }
