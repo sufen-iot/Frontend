@@ -1,5 +1,6 @@
 <template>
-  <div></div>
+  <div class="live">
+  </div>
 </template>
 
 <script>
