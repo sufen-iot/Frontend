@@ -1,10 +1,10 @@
 <template>
   <div class="request">
-    <AccidentContent :accident="accident" />
     <div class="request_wrapper">
-      <AccidentCapture />
-      <AccidentPosition />
+      <AccidentContent :accident="accident" />
+      <AccidentCapture :accident="accident.image" />
     </div>
+    <AccidentPosition :accident="accident_position" />
   </div>
 </template>
 
@@ -22,11 +22,13 @@ export default Vue.extend({
   components: { AccidentContent, AccidentCapture, AccidentPosition },
   data () {
     return {
-      accident: {} as AccidentList
+      accident: {} as AccidentList,
+      accident_position: [] as number[]
     }
   },
   async mounted () {
     this.accident = await getAccidentListById(this.$route.params.id)
+    this.accident_position = [this.accident.latitude, this.accident.longitude]
   }
 })
 

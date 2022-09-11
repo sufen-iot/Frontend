@@ -1,12 +1,20 @@
 <template>
-  <div class="accident"></div>
+  <div class="accident">
+    <img class="accident_img" :src="`data:image/jpeg;base64,${accident}`">
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'AccidentCapture'
+  name: 'AccidentCapture',
+  props: {
+    accident: {
+      type: String,
+      required: true
+    }
+  }
 })
 </script>
 

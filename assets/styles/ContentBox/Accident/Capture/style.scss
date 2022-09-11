@@ -1,0 +1,7 @@
+.accident {
+  display: flex;
+  flex-direction: column;
+  &_img {
+    object-fit: cover;
+  }
+}

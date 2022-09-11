@@ -1,38 +1,38 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  color: white;
 }
 
 :root {
-    --success-color: #28a745;
-    --danger-color: #dc3545;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
 
-    --white_1: #fff;
-    --white_2: #f8f9fa;
-    --white_3: #f1f3f5;
-    --white_4: #e9ecef;
-    --white_5: #dee2e6;
-    --black_1: #000;
-    --black_2: #0a0a0a;
-    --black_3: #1b1c1d;
-    --black_4: #2d2e2f;
-    --black_5: #4a4b4c;
+  --white_1: #fff;
+  --white_2: #f8f9fa;
+  --white_3: #f1f3f5;
+  --white_4: #e9ecef;
+  --white_5: #dee2e6;
+  --black_1: #000;
+  --black_2: #0a0a0a;
+  --black_3: #1b1c1d;
+  --black_4: #2d2e2f;
+  --black_5: #4a4b4c;
 }
 
-button{
-    border:none; 
-    outline:none;
-    box-shadow:none; 
-    cursor:pointer
+button {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
