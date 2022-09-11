@@ -3,19 +3,49 @@
     <h1 class="list_title">
       History
     </h1>
+    <p class="list_subtitle">
+      클릭해주세요!
+    </p>
 
     <div class="list_wrapper">
-      <div class="list_item">
-        <p></p>
+      <div
+        v-for="(i, k) in accident.history"
+        :key="k"
+        class="list_item"
+        @click="redirect(i.id)"
+      >
+        <h1>수난 사고</h1>
+        <p>{{ i.time[0] }}</p>
+        <p>{{ i.time[1] }}</p>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+import { getAccidentList } from '~/api'
+import type { Accident } from '~/types'
 
-}
+export default Vue.extend({
+  name: 'ListHistory',
+  data () {
+    return {
+      accident: {} as Accident
+    }
+  },
+  async mounted () {
+    this.accident = await getAccidentList()
+    this.accident.history.forEach((element) => {
+      element.time = element.time.toString().split('T')
+    })
+  },
+  methods: {
+    redirect (id: string) {
+      this.$router.push(`/request/${id}`)
+    }
+  }
+})
 </script>
 
 <style lang="scss">

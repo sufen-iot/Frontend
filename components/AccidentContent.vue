@@ -29,7 +29,12 @@ export default Vue.extend({
       required: true
     }
   },
-  updated () {
+  data () {
+    return {
+      accidentObject: {} as AccidentList
+    }
+  },
+  mounted () {
     if (this.accident === null) {
       this.$router.push('/')
     }

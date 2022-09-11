@@ -2,11 +2,11 @@
 // 수난 사고가 일어났을 때 받아오는 데이터의 타입을 정의하였습니다.
 export interface AccidentList {
   id: string;
-  time: Date;
+  time: Date | string[];
   image: string;
   latitude: number;
   longitude: number;
-  status: boolean;
+  status: null | boolean;
 }
 
 export interface Accident {

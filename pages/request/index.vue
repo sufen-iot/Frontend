@@ -17,6 +17,7 @@ export default Vue.extend({
   },
   async mounted () {
     this.accident = await getAccidentList()
+    console.log(this.accident)
 
     if (this.accident.totalCount === 0) {
       this.$router.push('/')

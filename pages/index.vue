@@ -1,14 +1,14 @@
 <template>
   <div>
-    <LiveVideo />
+    <MainPage />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import LiveVideo from '~/components/LiveVideo.vue'
+import MainPage from '~/components/MainPage.vue'
 
 export default Vue.extend({
-  components: { LiveVideo }
+  components: { MainPage }
 })
 </script>

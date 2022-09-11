@@ -17,7 +17,7 @@ export default Vue.extend({
   name: 'AccidentPosition',
   props: {
     accident: {
-      type: Array,
+      type: Array as () => Array<number>,
       required: true
     }
   },
@@ -28,10 +28,14 @@ export default Vue.extend({
       map: null
     }
   },
-  mounted () {
-    if (window.kakao && window.kakao.maps) {
+  watch: {
+    accidnet () {
+      console.log(this.accident)
       this.initMap()
-    } else {
+    }
+  },
+  mounted () {
+    if (!window.kakao && !window.kakao.maps) {
       const script = document.createElement('script')
       script.src =
         `//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=${process.env.KAKAO_API_KEY}`
