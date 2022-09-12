@@ -31,13 +31,34 @@ export default Vue.extend({
   name: 'ListHistory',
   data () {
     return {
+      timer: null as NodeJS.Timer | null,
       accident: {} as Accident
     }
   },
+  watch: {
+    async $route () {
+      this.accident = await getAccidentList()
+      this.accident.history.forEach((element) => {
+        element.time = element.time.toString().split('T')
+      })
+    }
+  },
   async mounted () {
-    this.accident = await getAccidentList()
-    this.accident.history.forEach((element) => {
-      element.time = element.time.toString().split('T')
+    if (this.timer) {
+      clearInterval(this.timer)
+    }
+    function start (callback: Function) {
+      callback()
+
+      return setInterval(async () => {
+        await callback()
+      }, 1000)
+    }
+    await start(async () => {
+      this.accident = await getAccidentList()
+      this.accident.history.forEach((element) => {
+        element.time = element.time.toString().split('T')
+      })
     })
   },
   methods: {

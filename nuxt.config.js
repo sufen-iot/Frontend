@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'sufen-front',
+    title: 'SUFEN',
     htmlAttrs: {
       lang: 'en'
     },
@@ -19,7 +19,7 @@ export default {
     ],
     link: [
       { rel: 'stylesheet', type: 'text/css', href: 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css' },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/images/logo.png' }
     ]
   },
 

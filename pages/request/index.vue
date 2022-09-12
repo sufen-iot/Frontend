@@ -15,14 +15,18 @@ export default Vue.extend({
       accident: {} as Accident
     }
   },
+  watch: {
+    async $route () {
+      this.accident = await getAccidentList()
+    }
+  },
   async mounted () {
     this.accident = await getAccidentList()
-    console.log(this.accident)
 
     if (this.accident.totalCount === 0) {
       this.$router.push('/')
     } else {
-      this.$router.push(`/request/${this.accident.history[this.accident.totalCount - 1].id}`)
+      this.$router.push(`/request/${this.accident.history[0].id}`)
     }
   }
 })

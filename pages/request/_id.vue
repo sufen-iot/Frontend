@@ -1,5 +1,5 @@
 <template>
-  <div class="request">
+  <div v-if="accident" class="request">
     <div class="request_wrapper">
       <AccidentContent :accident="accident" />
       <AccidentCapture :accident="accident.image" />
@@ -22,13 +22,17 @@ export default Vue.extend({
   components: { AccidentContent, AccidentCapture, AccidentPosition },
   data () {
     return {
-      accident: {} as AccidentList,
+      accident: null as AccidentList | null,
       accident_position: [] as number[]
     }
   },
   async mounted () {
     this.accident = await getAccidentListById(this.$route.params.id)
-    this.accident_position = [this.accident.latitude, this.accident.longitude]
+    if (!this.accident) {
+      this.$router.push('/')
+    } else {
+      this.accident_position = [this.accident.latitude, this.accident.longitude]
+    }
   }
 })
 

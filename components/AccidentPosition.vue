@@ -29,13 +29,13 @@ export default Vue.extend({
     }
   },
   watch: {
-    accidnet () {
-      console.log(this.accident)
+    accident () {
       this.initMap()
     }
   },
   mounted () {
-    if (!window.kakao && !window.kakao.maps) {
+    if (!window.kakao || !window.kakao.maps) {
+      console.debug('attach kakao maps')
       const script = document.createElement('script')
       script.src =
         `//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=${process.env.KAKAO_API_KEY}`
@@ -45,6 +45,8 @@ export default Vue.extend({
         })
       })
       document.head.appendChild(script)
+    } else {
+      this.initMap()
     }
   },
   methods: {

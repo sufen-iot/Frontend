@@ -44,6 +44,7 @@ export default Vue.extend({
       const id = this.accident.id
       const status = elements.target.id === 'accept'
       await putAccidentList({ id, status })
+      this.$router.push('/request')
     }
   }
 })

@@ -1,5 +1,5 @@
 <template>
-  <div class="profile">
+  <div class="profile" @click="() => {$nuxt.$router.push('/')}">
     <h1 class="profile_title">
       SUFEN
     </h1>

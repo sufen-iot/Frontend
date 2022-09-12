@@ -1,6 +1,6 @@
 <template>
   <div class="accident">
-    <img class="accident_img" :src="`data:image/jpeg;base64,${accident}`">
+    <img v-if="accident" class="accident_img" :src="`data:image/jpeg;base64,${accident}`">
   </div>
 </template>
 
@@ -12,7 +12,8 @@ export default Vue.extend({
   props: {
     accident: {
       type: String,
-      required: true
+      required: true,
+      default: ''
     }
   }
 })
