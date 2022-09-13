@@ -56,5 +56,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  env: {
+    API_URL: process.env.API_URL,
+    KAKAO_API_KEY: process.env.KAKAO_API_KEY
   }
 }
