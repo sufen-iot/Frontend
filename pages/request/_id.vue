@@ -29,10 +29,12 @@ export default Vue.extend({
   async mounted () {
     this.accident = await getAccidentListById(this.$route.params.id)
     if (!this.accident) {
-      this.$router.push('/')
+      this.$router.push('/request')
     } else {
       this.accident_position = [this.accident.latitude, this.accident.longitude]
     }
+    // 백엔드에 요청하여 해당 id의 사고 정보를 받아옴
+    // id 정보가 없을 경우 /request 로 리다이렉트
   }
 })
 

@@ -25,11 +25,13 @@ export default Vue.extend({
         clearInterval(timer!)
       }
     }, 1000, this.timer)
+    // 사고가 발생한 경우 바로 사고 요청 페이지로 이동
   },
   destroyed () {
     if (this.timer) {
       clearInterval(this.timer)
     }
   }
+  // 다른 페이지로 이동 시 Interval 종료
 })
 </script>

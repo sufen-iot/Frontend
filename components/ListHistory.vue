@@ -42,6 +42,7 @@ export default Vue.extend({
         element.time = element.time.toString().split('T')
       })
     }
+    // 페이지가 이동할 때마다 데이터를 다시 받아옴
   },
   async mounted () {
     if (this.timer) {
@@ -60,11 +61,13 @@ export default Vue.extend({
         element.time = element.time.toString().split('T')
       })
     })
+    // 1초마다 백엔드에 요청을 보내서 사고 리스트를 갱신합니다.
   },
   methods: {
     redirect (id: string) {
       this.$router.push(`/request/${id}`)
     }
+    // 사고 리스트의 아이템을 클릭하면 해당 사고의 id를 가지고 사고 요청 페이지로 이동합니다.
   }
 })
 </script>

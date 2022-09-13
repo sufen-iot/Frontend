@@ -16,6 +16,7 @@ export default Vue.extend({
       default: ''
     }
   }
+  // pages/request.vue에서 props로 받아온 accident를 img 태그의 src로 넣어줌
 })
 </script>
 

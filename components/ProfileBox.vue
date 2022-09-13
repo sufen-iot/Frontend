@@ -16,6 +16,7 @@ export default Vue.extend({
   data () {
     return {
       now: ''
+      // 현재 시간을 저장하는 변수
     }
   },
   mounted () {
@@ -30,6 +31,8 @@ export default Vue.extend({
       const time = new Date()
       this.now = `${time.getFullYear()} / ${time.getMonth() + 1} / ${time.getDate()}`
     })
+
+    // 1초마다 현재 시간을 갱신합니다.
   }
 })
 </script>
