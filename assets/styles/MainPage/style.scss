@@ -4,4 +4,48 @@
 
   background-color: var(--black_4);
   border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+
+  &_logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    & img {
+      width: 220px;
+      height: 220px;
+    }
+    
+    &_desc {
+      & h1 {
+        font-size: 42px;
+        font-weight: 500;
+        color: var(--white_1);
+        margin-top: 18px;
+      }
+      & p {
+        font-size: 20px;
+        font-weight: 300;
+      }
+
+      & hr {
+        width: 100%;
+        height: 1px;
+        background-color: var(--white_1);
+        margin: 10px 0;
+      }
+    }
+  }
+
+  &_info {
+    & p {
+      font-size: 20px;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+  }
 }
