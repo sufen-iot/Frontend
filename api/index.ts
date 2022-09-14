@@ -30,3 +30,9 @@ export async function getAccidentListById (id: AccidentList['id']): Promise<Acci
 export async function putAccidentList (data: returnAccident) {
   await getAPI.put('/accident', data)
 }
+
+// 라즈베리파이의 정보를 받아오기 위한 함수입니다.
+export async function getHardware () {
+  const res = await getAPI.get('/hardware')
+  return res.data.data
+}
