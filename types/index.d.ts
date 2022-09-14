@@ -19,3 +19,11 @@ export interface returnAccident {
   id: string;
   status: boolean;
 }
+
+export interface Hardware {
+  cpu: string;
+  ram: string;
+  os: string;
+  kernel: string;
+  uptime: string;
+}
